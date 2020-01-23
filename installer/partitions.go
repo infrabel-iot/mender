@@ -240,10 +240,11 @@ func maybeResolveLink(unresolvedPath string) string {
 		log.Warnf("Could not resolve path link: %s Attempting to continue", unresolvedPath)
 		return unresolvedPath
 	}
-	// MEN-2302
-	// Only resolve /dev/disk/by-partuuid/
-	if path.Dir(unresolvedPath) == "/dev/disk/by-partuuid" {
-		return resolvedPath
-	}
-	return unresolvedPath
+	// // MEN-2302
+	// // Only resolve /dev/disk/by-partuuid/
+	// if path.Dir(unresolvedPath) == "/dev/disk/by-partuuid" {
+	// 	return resolvedPath
+	// }
+	// return unresolvedPath
+	return resolvedPath
 }
